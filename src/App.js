@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Switch, Route } from 'react-router-dom';
+import NavBar from './Components/NavBar';
 import LoginForm from './Components/LoginForm';
 import SignupForm from './Components/SignupForm';
 import Profile from './Components/Profile';
@@ -13,7 +15,7 @@ export class App extends Component {
   state = {
     id: 0,
     username: "",
-    page: "Login"
+    //page: "Login"
   }
 
   componentDidMount () {
@@ -36,35 +38,64 @@ export class App extends Component {
     this.setState({
       id: userInfo.user_id,
       username: userInfo.username,
-      page: "Profile"
+     // page: "Profile"
     })
+    
   }
 
-  handleSignup = (userInfo) => {}
-
-  whichToRender = () => {
-    switch(this.state.page){
-      case "Login":
-        return <LoginForm handleLogin={this.handleLogin} />
-      case "Profile": 
-        return <Profile username={this.state.username} id={this.state.id}/>
-      case "Signup":
-        return <SignupForm username={this.handleLogin}/>
-      default:
-        return <Home />
-    }
-  }
+  // whichToRender = () => {
+  //   switch(this.state.page){
+  //     case "Login":
+  //       return <LoginForm handleLogin={this.handleLogin} />
+  //     case "Profile": 
+  //       return <Profile username={this.state.username} id={this.state.id}/>
+  //     case "Signup":
+  //       return <SignupForm username={this.handleLogin}/>
+  //     default:
+  //       return <Home />
+  //   }
+  // }
 
 
   render() {
-    console.log(this.state, "APP")
-    return (
-      <div className="App">
-        <h1>Endangered Species App</h1>
-         {this.whichToRender()}
-      </div>
-    )
+   return (
+     <Switch>
+       <div>
+        <NavBar />
+        <Route 
+        exact 
+        path="/" 
+        render={(routerProps)=> <Home  {...routerProps} />}
+        />
+        <Route
+        exact 
+        path="/login"
+        render={(routerProps)=> <LoginForm {...routerProps} handleLogin={this.handleLogin} />}
+         />
+        <Route
+        exact 
+        path="/signup"
+        render={(routerProps)=> <SignupForm {...routerProps} username={this.handleLogin} />}
+         />
+        <Route
+        exact 
+        path="/profile"
+        render={(routerProps)=> <Profile {...routerProps} username={this.state.username} id={this.state.id} />}
+         />
+       </div>
+     </Switch>
+   )
   }
+
+
 }
 
+
 export default App
+
+// return (
+//   <div className="App">
+//     <h1>Endangered Species App</h1>
+//      {this.whichToRender()}
+//   </div>
+// )

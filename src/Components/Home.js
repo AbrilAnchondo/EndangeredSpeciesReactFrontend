@@ -4,7 +4,7 @@ export class Home extends Component {
     render() {
         return (
             <div>
-                My App about Endangered Species!!!
+                My App about Endangered Species!!! Home Page
             </div>
         )
     }

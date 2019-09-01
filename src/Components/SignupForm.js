@@ -28,6 +28,7 @@ export default class SignupForm extends Component {
             if (!userInfo.errors) {
               localStorage.token = userInfo.token
               this.props.username(userInfo)
+              this.props.history.push('/profile')
               
             }
         })
@@ -45,7 +46,7 @@ export default class SignupForm extends Component {
                 <input type="text" name="username" value={this.state.username} id="username" onChange={this.handleChange}/>
                 <label htmlFor="password">Password</label>
                 <input type="password" name="password" value={this.state.password} id="password" onChange={this.handleChange}/>
-                <input type="submit" value="Login"/>
+                <input type="submit" value="Signup"/>
                 </form>
             </div>
         )
