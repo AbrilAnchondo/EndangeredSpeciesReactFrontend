@@ -31,6 +31,14 @@ const NavBar = () => {
         >
         Your Page
       </NavLink>
+
+      <NavLink 
+        to="/species"
+        exact activeStyle={{color: 'blue'}}
+        style={{float: 'right'}}
+        >
+        See Endangered Species
+      </NavLink>
     </div>
   );
 }

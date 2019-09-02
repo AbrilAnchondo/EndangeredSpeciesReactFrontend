@@ -5,6 +5,7 @@ import LoginForm from './Components/LoginForm';
 import SignupForm from './Components/SignupForm';
 import Profile from './Components/Profile';
 import Home from './Components/Home';
+import Species from './Components/Species';
 import './App.css';
 
 
@@ -13,9 +14,9 @@ import './App.css';
 export class App extends Component {
   
   state = {
+    
     id: 0,
-    username: "",
-    //page: "Login"
+    username: ""
   }
 
   componentDidMount () {
@@ -38,24 +39,10 @@ export class App extends Component {
     this.setState({
       id: userInfo.user_id,
       username: userInfo.username,
-     // page: "Profile"
     })
-    
   }
 
-  // whichToRender = () => {
-  //   switch(this.state.page){
-  //     case "Login":
-  //       return <LoginForm handleLogin={this.handleLogin} />
-  //     case "Profile": 
-  //       return <Profile username={this.state.username} id={this.state.id}/>
-  //     case "Signup":
-  //       return <SignupForm username={this.handleLogin}/>
-  //     default:
-  //       return <Home />
-  //   }
-  // }
-
+ 
 
   render() {
    return (
@@ -65,7 +52,7 @@ export class App extends Component {
         <Route 
         exact 
         path="/" 
-        render={(routerProps)=> <Home  {...routerProps} />}
+        render={(routerProps)=> <Home  {...routerProps} username={this.state.username} />}
         />
         <Route
         exact 
@@ -82,6 +69,11 @@ export class App extends Component {
         path="/profile"
         render={(routerProps)=> <Profile {...routerProps} username={this.state.username} id={this.state.id} />}
          />
+        <Route
+        exact 
+        path="/species"
+        render={(routerProps)=> <Species {...routerProps} username={this.state.username} id={this.state.id} />}
+         />
        </div>
      </Switch>
    )
@@ -93,9 +85,3 @@ export class App extends Component {
 
 export default App
 
-// return (
-//   <div className="App">
-//     <h1>Endangered Species App</h1>
-//      {this.whichToRender()}
-//   </div>
-// )
