@@ -11,7 +11,7 @@ export class Animal extends Component {
      
     render() {
         return (
-            <div>
+            <div >
                 <h3>Common Name: {this.props.animalData.common_name}</h3>
                     <p>Scientific Name: {this.props.animalData.scientific_name}</p>
                     <p>Threat Type: {this.props.animalData.threat_type}</p>
@@ -25,7 +25,7 @@ export class Animal extends Component {
                             <p>Use and Trade: {this.props.animalData.use_trade}</p>
                         </div>
                     }   
-                    <p>save<br/><span>💟</span></p>   
+                    <p>save<br/><span onClick={() => this.props.handleClick(this.props.animalData)}>💟</span></p>   
             </div>
         )
     }

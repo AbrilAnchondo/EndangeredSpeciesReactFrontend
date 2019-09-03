@@ -3,9 +3,8 @@ import { Switch, Route } from 'react-router-dom';
 import NavBar from './Components/NavBar';
 import LoginForm from './Components/LoginForm';
 import SignupForm from './Components/SignupForm';
-import Profile from './Components/Profile';
 import Home from './Components/Home';
-import Species from './Components/Species';
+import SpeciesContainer from './containers/SpeciesContainer';
 import './App.css';
 
 
@@ -14,7 +13,6 @@ import './App.css';
 export class App extends Component {
   
   state = {
-    
     id: 0,
     username: ""
   }
@@ -35,14 +33,13 @@ export class App extends Component {
     }
   }
 
+  
   handleLogin = (userInfo) => {
     this.setState({
       id: userInfo.user_id,
       username: userInfo.username,
     })
   }
-
- 
 
   render() {
    return (
@@ -66,16 +63,12 @@ export class App extends Component {
          />
         <Route
         exact 
-        path="/profile"
-        render={(routerProps)=> <Profile {...routerProps} username={this.state.username} id={this.state.id} />}
-         />
-        <Route
-        exact 
         path="/species"
-        render={(routerProps)=> <Species {...routerProps} username={this.state.username} id={this.state.id} />}
+        render={(routerProps)=> <SpeciesContainer {...routerProps} username={this.state.username} id={this.state.id}/>}
          />
-       </div>
+        </div>
      </Switch>
+
    )
   }
 
@@ -85,3 +78,4 @@ export class App extends Component {
 
 export default App
 
+        

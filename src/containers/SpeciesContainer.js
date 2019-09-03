@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
-import Animal from './Animal';
+import Species from './Species';
+import Profile from './Profile';
 
-export class Species extends Component {
+
+export default class SpeciesContainer extends Component {
 
     state = {
-        species: []
+        species: [],
+        user_species: []
     }
 
     componentDidMount () {
@@ -22,22 +25,25 @@ export class Species extends Component {
                 })
             })
         } else {
-            alert("Please Login or Signup to continue")
             this.props.history.push('/')
+           
         }
     }
 
-
+    saveToPage = (animalData) => {
+        
+    }
     
-    //inside the render I need to map through the species array
+   
+
     render() {
         return (
             <div>
-                <h2>Learn About Endangered Species</h2>
-                {this.state.species.map(animal => <Animal animalData={animal} key={animal.id}/>)}
+                <Species species={this.state.species} username={this.props.username} id={this.props.id} saveToPage={this.saveToPage}/>
+                <Profile username={this.props.username} id={this.props.id} />
             </div>
         )
     }
 }
 
-export default Species
+
