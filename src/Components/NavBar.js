@@ -1,7 +1,14 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const NavBar = () => {
+const NavBar = (props) => {
+
+ const handleLogoutClick = () => {
+    localStorage.clear()
+    alert("Goodbye")
+    
+  }
+
   return (
     <div style={{ borderBottom: '2px solid black', padding: '20px', marginBottom: '12px' }}>
       <NavLink 
@@ -30,6 +37,14 @@ const NavBar = () => {
         exact activeStyle={{color: 'blue'}}
         >
         Your Page
+      </NavLink>
+
+      <NavLink 
+        to="/logout"
+        exact activeStyle={{color: 'blue'}}
+        onClick={handleLogoutClick}
+        >
+        Logout
       </NavLink>
 
       <NavLink 
