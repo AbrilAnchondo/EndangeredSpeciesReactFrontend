@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Species from './Species';
-import Profile from './Profile';
 import Search from '../Components/Search';
 
 
@@ -8,7 +7,6 @@ export default class SpeciesContainer extends Component {
 
     state = {
         species: [],
-        user_species: [],
         searchTerm: "All"
     }
 
@@ -28,7 +26,7 @@ export default class SpeciesContainer extends Component {
             })
         } else {
             this.props.history.push('/')
-           
+            alert("Please login or sign up")
         }
     }
 
@@ -50,7 +48,10 @@ export default class SpeciesContainer extends Component {
         fetch("http://localhost:3000/followings", {
             method: "POST",
             headers: {
-                "Authorization": localStorage.token
+                "Content-Type": "application/json",
+                "Authorization": localStorage.token,
+                "Accepts": "application/json"
+                
             },
             body: JSON.stringify({
                 user_id: userId,
@@ -59,12 +60,8 @@ export default class SpeciesContainer extends Component {
         })
         .then(resp => resp.json())
         .then(console.log)
-        // if (!this.state.user_species.includes(animalData)) {
-        //     this.setState({
-        //       user_species: [animalData, ...this.state.user_species]
-        //     })
-        //   }
-        
+            
+         
     }
     
    
@@ -77,7 +74,7 @@ export default class SpeciesContainer extends Component {
                 handleSubmit={this.handleSubmit}
                 />
                 <Species species={this.whichSpeciesToRender()} username={this.props.username} id={this.props.id} saveToPage={this.saveToPage} searchTerm={this.state.searchTerm}/>
-                <Profile username={this.props.username} id={this.props.id} />
+                
             </div>
         )
     }

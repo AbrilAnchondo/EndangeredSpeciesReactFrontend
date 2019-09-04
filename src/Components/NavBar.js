@@ -3,11 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 const NavBar = (props) => {
 
- const handleLogoutClick = () => {
-    localStorage.clear()
-    alert("Goodbye")
-    
-  }
+ 
 
   return (
     <div style={{ borderBottom: '2px solid black', padding: '20px', marginBottom: '12px' }}>
@@ -35,6 +31,7 @@ const NavBar = (props) => {
       <NavLink 
         to="/profile"
         exact activeStyle={{color: 'blue'}}
+        style={{float: 'right'}}
         >
         Your Page
       </NavLink>
@@ -42,7 +39,6 @@ const NavBar = (props) => {
       <NavLink 
         to="/logout"
         exact activeStyle={{color: 'blue'}}
-        onClick={handleLogoutClick}
         >
         Logout
       </NavLink>
@@ -52,7 +48,7 @@ const NavBar = (props) => {
         exact activeStyle={{color: 'blue'}}
         style={{float: 'right'}}
         >
-        See Endangered Species
+        Endangered Species
       </NavLink>
     </div>
   );

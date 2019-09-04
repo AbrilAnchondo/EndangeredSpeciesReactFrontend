@@ -4,7 +4,9 @@ import NavBar from './Components/NavBar';
 import LoginForm from './Components/LoginForm';
 import SignupForm from './Components/SignupForm';
 import Home from './Components/Home';
+import Logout from './Components/Logout';
 import SpeciesContainer from './containers/SpeciesContainer';
+import Profile from './containers/Profile';
 import './App.css';
 
 
@@ -66,7 +68,16 @@ export class App extends Component {
         path="/species"
         render={(routerProps)=> <SpeciesContainer {...routerProps} username={this.state.username} id={this.state.id}/>}
          />
-       
+         <Route 
+          exact 
+          path="/logout" 
+          render={(routerProps)=> <Logout  {...routerProps} username={this.state.username} />}
+          />
+          <Route 
+          exact 
+          path="/profile" 
+          render={(routerProps)=> <Profile  {...routerProps} username={this.state.username} id={this.state.id}/>}
+          />
         </div>
      </Switch>
 
