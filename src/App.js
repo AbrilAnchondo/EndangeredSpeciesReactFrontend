@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
+
 import Home from './pages/Home';
 import LoginForm from './pages/auth/LoginForm';
 import SignupForm from './pages/auth/SignupForm';
 import Logout from './pages/auth/Logout';
 import SpeciesContainer from './pages/species/SpeciesContainer';
 import Profile from './pages/user/Profile';
-import NavBar from './Components/NavBar';
-import Organizations from './containers/Organizations';
-import About from './Components/About';
-import './App.css';
+import Organizations from './pages/Organizations';
+import About from './pages/About';
 
+import './App.css';
+import NavBar from './NavBar';
 
 
 
