@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Species from './Species';
-import Search from '../Components/Search';
-import SearchGroup from '../Components/SearchGroup';
+import Search from '../../Components/Search';
+import SearchGroup from '../../Components/SearchGroup';
 
 
 

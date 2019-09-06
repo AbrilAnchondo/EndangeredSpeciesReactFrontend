@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Animal from '../Components/Animal';
+import Animal from '../pages/species/Animal';
 import MyComments from '../Components/MyComments';
 import Commentors from '../Components/Commentors';
 
@@ -56,7 +56,7 @@ export default class Profile extends Component {
     }
 
     renderComments = () => {
-        
+
     }
 
     render() {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Animal from '../Components/Animal';
+import Animal from './Animal';
 
 
 
