@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import LoginForm from './pages/auth/LoginForm';
+import SignupForm from './pages/auth/SignupForm';
+import Logout from './pages/auth/Logout';
 import NavBar from './Components/NavBar';
-import LoginForm from './Components/LoginForm';
-import SignupForm from './Components/SignupForm';
-import Home from './Components/Home';
-import Logout from './Components/Logout';
 import SpeciesContainer from './containers/SpeciesContainer';
 import Profile from './containers/Profile';
-import Activity from './containers/Activity';
 import Organizations from './containers/Organizations';
 import About from './Components/About';
 import './App.css';
@@ -71,11 +70,7 @@ export class App extends Component {
         path="/species"
         render={(routerProps)=> <SpeciesContainer {...routerProps} username={this.state.username} id={this.state.id}/>}
          />
-         <Route 
-          exact 
-          path="/activity" 
-          render={(routerProps)=> <Activity  {...routerProps} username={this.state.username} id={this.state.id}/>}
-          />
+         
           <Route 
           exact 
           path="/organizations" 
