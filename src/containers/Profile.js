@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import Animal from '../Components/Animal';
+import MyComments from '../Components/MyComments';
+import Commentors from '../Components/Commentors';
 
 
 export default class Profile extends Component {
     
     state = {
-        userSpecies: []
+        userSpecies: [],
+        myComments: [],
+        commentors: []
     }
 
     componentDidMount () {
@@ -18,7 +22,9 @@ export default class Profile extends Component {
             .then(resp => resp.json())
             .then(data => {
                 this.setState({
-                    userSpecies: data.species
+                    userSpecies: data.species,
+                    myComments: data.m,
+                    commentors: data.makers
                 })
             })
         }else {
@@ -27,12 +33,40 @@ export default class Profile extends Component {
         }
     }
 
+   
+
+    //fetch to delete animal form user's page
+    deleteFromPage = (animal) => {
+        fetch(`http://localhost:3000/users/${this.props.id}`, {
+            method: "DELETE",
+            headers: {
+                "Authorization": localStorage.token
+            },
+            body: JSON.stringify(
+            )
+        })
+        .then(resp => resp.json())
+        
+        let index = this.state.userSpecies.indexOf(animal)
+        let copyUserSpecies = [...this.state.userSpecies]
+        copyUserSpecies.splice(index, 1)
+        this.setState({
+            userSpecies: copyUserSpecies
+        })   
+    }
+
+    renderComments = () => {
+        
+    }
+
     render() {
-        console.log(this.state.userSpecies)
+    
         return (
             <div>
                 Nice Collection {this.props.username}!
-                {this.state.userSpecies.map(animal => <Animal animalData={animal} key={animal.common_name} handleClick={this.props.saveToPage}/>)}
+                {this.state.userSpecies.map((animal, index) => <Animal animalData={animal} commentors={this.state.commentors} comments={this.state.myComments} key={`${animal.common_name}-${index}`} handleClick={() => this.deleteFromPage(animal)}/>)}
+                <MyComments comments={this.state.myComments}/>
+                <Commentors commentors={this.state.commentors}/>
                 
             </div>
         )

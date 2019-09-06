@@ -22,6 +22,14 @@ const NavBar = (props) => {
       </NavLink>
 
       <NavLink 
+        to="/logout"
+        exact activeStyle={{color: 'blue'}}
+        style={{float: 'right'}}
+        >
+        Logout
+      </NavLink>
+
+      <NavLink 
         to="/signup"
         exact activeStyle={{color: 'blue'}}
         >
@@ -29,18 +37,18 @@ const NavBar = (props) => {
       </NavLink>
 
       <NavLink 
+        to="/about"
+        exact activeStyle={{color: 'blue'}}
+        >
+        About
+      </NavLink>
+
+      <NavLink 
         to="/profile"
         exact activeStyle={{color: 'blue'}}
         style={{float: 'right'}}
         >
-        Your Page
-      </NavLink>
-
-      <NavLink 
-        to="/logout"
-        exact activeStyle={{color: 'blue'}}
-        >
-        Logout
+        My Page
       </NavLink>
 
       <NavLink 
@@ -50,6 +58,9 @@ const NavBar = (props) => {
         >
         Endangered Species
       </NavLink>
+
+      
+      
     </div>
   );
 }

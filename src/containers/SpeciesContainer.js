@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import Species from './Species';
 import Search from '../Components/Search';
+import SearchGroup from '../Components/SearchGroup';
+
 
 
 export default class SpeciesContainer extends Component {
 
     state = {
         species: [],
-        searchTerm: "All"
+        searchTerm: "All",
+        searchGroupTerm: "All"
     }
 
     componentDidMount () {
@@ -34,6 +37,11 @@ export default class SpeciesContainer extends Component {
         this.setState({searchTerm: event.target.value})
     }
 
+
+    searchGroupTerm = (event) => {
+        this.setState({searchGroupTerm: event.target.value})
+    }
+
    whichSpeciesToRender = () => {
     if(this.state.searchTerm === "All"){
         return this.state.species
@@ -45,6 +53,7 @@ export default class SpeciesContainer extends Component {
     saveToPage = (animalData) => {
         let userId = this.props.id
         let speciesId = animalData.id
+        
         fetch("http://localhost:3000/followings", {
             method: "POST",
             headers: {
@@ -60,7 +69,7 @@ export default class SpeciesContainer extends Component {
         })
         .then(resp => resp.json())
         .then(console.log)
-            
+      
          
     }
     
@@ -69,10 +78,14 @@ export default class SpeciesContainer extends Component {
     render() {
         return (
             <div>
+                <a href="/organizations">WildLife Organizations</a><br/>
+                <a href="/activity">See other users and comments!</a><br/>
+                <hr></hr>
                 <Search searchTerm={this.state.searchTerm}
                 handleChange={this.handleChange}
                 handleSubmit={this.handleSubmit}
                 />
+                <SearchGroup searchGroupTerm={this.state.searchGroupTerm} handleChange={this.searchGroupTerm}/>
                 <Species species={this.whichSpeciesToRender()} username={this.props.username} id={this.props.id} saveToPage={this.saveToPage} searchTerm={this.state.searchTerm}/>
                 
             </div>

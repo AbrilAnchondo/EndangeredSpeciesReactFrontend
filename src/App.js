@@ -7,6 +7,9 @@ import Home from './Components/Home';
 import Logout from './Components/Logout';
 import SpeciesContainer from './containers/SpeciesContainer';
 import Profile from './containers/Profile';
+import Activity from './containers/Activity';
+import Organizations from './containers/Organizations';
+import About from './Components/About';
 import './App.css';
 
 
@@ -70,8 +73,23 @@ export class App extends Component {
          />
          <Route 
           exact 
+          path="/activity" 
+          render={(routerProps)=> <Activity  {...routerProps} username={this.state.username} id={this.state.id}/>}
+          />
+          <Route 
+          exact 
+          path="/organizations" 
+          render={(routerProps)=> <Organizations  {...routerProps}/>}
+          />
+         <Route 
+          exact 
           path="/logout" 
           render={(routerProps)=> <Logout  {...routerProps} username={this.state.username} />}
+          />
+          <Route 
+          exact 
+          path="/about" 
+          render={(routerProps)=> <About  {...routerProps} />}
           />
           <Route 
           exact 
