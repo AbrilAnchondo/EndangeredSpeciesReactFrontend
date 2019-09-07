@@ -11,6 +11,7 @@ export class LoginForm extends Component {
         this.setState({
             [event.target.name]: event.target.value
         })
+        localStorage.username=this.state.username
     }
     
 

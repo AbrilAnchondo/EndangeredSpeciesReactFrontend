@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 
-export default class Search extends Component {
+export default class FilterThreatType extends Component {
     render() {
         return (
             <div>
                 <form>
                     <label>
                     Filter by Threat Type:
-                    <select value={this.props.searchTerm} onChange={this.props.handleChange}>
+                    <select value={this.props.filterThreatTerm} onChange={this.props.handleChange}>
                         <option value="All">All</option>
                         <option value="Extinct">Extinct(E)</option>
                         <option value="Extinct in the Wild">Extinct in the wild(EW)</option>

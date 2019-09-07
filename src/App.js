@@ -5,7 +5,7 @@ import Home from './pages/Home';
 import LoginForm from './pages/auth/LoginForm';
 import SignupForm from './pages/auth/SignupForm';
 import Logout from './pages/auth/Logout';
-import SpeciesContainer from './pages/species/SpeciesContainer';
+import SpeciesPage from './pages/species/SpeciesPage';
 import Profile from './pages/user/Profile';
 import Organizations from './pages/Organizations';
 import About from './pages/About';
@@ -44,6 +44,7 @@ export class App extends Component {
       id: userInfo.user_id,
       username: userInfo.username,
     })
+    localStorage.id=userInfo.user_id
   }
 
   render() {
@@ -66,32 +67,31 @@ export class App extends Component {
         path="/signup"
         render={(routerProps)=> <SignupForm {...routerProps} username={this.handleLogin} />}
          />
-        <Route
-        exact 
+        <Route 
         path="/species"
-        render={(routerProps)=> <SpeciesContainer {...routerProps} username={this.state.username} id={this.state.id}/>}
+        render={(routerProps)=> <SpeciesPage {...routerProps} username={this.state.username} id={this.state.id}/>}
          />
-         
-          <Route 
-          exact 
-          path="/organizations" 
-          render={(routerProps)=> <Organizations  {...routerProps}/>}
-          />
-         <Route 
-          exact 
-          path="/logout" 
-          render={(routerProps)=> <Logout  {...routerProps} username={this.state.username} />}
-          />
-          <Route 
-          exact 
-          path="/about" 
-          render={(routerProps)=> <About  {...routerProps} />}
-          />
-          <Route 
-          exact 
-          path="/profile" 
-          render={(routerProps)=> <Profile  {...routerProps} username={this.state.username} id={this.state.id}/>}
-          />
+        
+        <Route 
+        exact 
+        path="/organizations" 
+        render={(routerProps)=> <Organizations  {...routerProps}/>}
+        />
+        <Route 
+        exact 
+        path="/logout" 
+        render={(routerProps)=> <Logout  {...routerProps} username={this.state.username} />}
+        />
+        <Route 
+        exact 
+        path="/about" 
+        render={(routerProps)=> <About  {...routerProps} />}
+        />
+        <Route 
+        exact 
+        path="/profile" 
+        render={(routerProps)=> <Profile  {...routerProps} username={this.state.username} id={this.state.id}/>}
+        />
         </div>
      </Switch>
 

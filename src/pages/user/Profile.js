@@ -1,20 +1,22 @@
 import React, { Component } from 'react';
-import Animal from '../species/Animal';
 import MyComments from './MyComments';
 import Commentors from './Commentors';
+import SaveButton from './SaveButton';
+import SpeciesList from '../species/SpeciesList';
+
+
 
 
 export default class Profile extends Component {
     
     state = {
-        userSpecies: [],
-        myComments: [],
-        commentors: []
+        followedSpecies: [],
+       
     }
 
     componentDidMount () {
         if (localStorage.token){
-            fetch(`http://localhost:3000/users/${this.props.id}`, {
+            fetch(`http://localhost:3000/users/${localStorage.id}`, {
                 headers: {
                     "Authorization": localStorage.token
                 }
@@ -22,56 +24,45 @@ export default class Profile extends Component {
             .then(resp => resp.json())
             .then(data => {
                 this.setState({
-                    userSpecies: data.species,
-                    myComments: data.m,
-                    commentors: data.makers
+                    followedSpecies: data.species,
+                   
                 })
             })
         }else {
             this.props.history.push('/')
             alert("Please login or sign up")
-        }
+         }
     }
 
    
 
-    //fetch to delete animal form user's page
-    deleteFromPage = (animal) => {
-        fetch(`http://localhost:3000/users/${this.props.id}`, {
-            method: "DELETE",
-            headers: {
-                "Authorization": localStorage.token
-            },
-            body: JSON.stringify(
-            )
-        })
-        .then(resp => resp.json())
+    
+    // deleteFromPage = (animal) => {
+    //     fetch(`http://localhost:3000/users/${this.props.id}`, {
+    //         method: "DELETE",
+    //         headers: {
+    //             "Authorization": localStorage.token
+    //         },
+    //         body: JSON.stringify(
+    //         )
+    //     })
+    //     .then(resp => resp.json())
         
-        let index = this.state.userSpecies.indexOf(animal)
-        let copyUserSpecies = [...this.state.userSpecies]
-        copyUserSpecies.splice(index, 1)
-        this.setState({
-            userSpecies: copyUserSpecies
-        })   
-    }
+    //     let index = this.state.userSpecies.indexOf(animal)
+    //     let copyUserSpecies = [...this.state.userSpecies]
+    //     copyUserSpecies.splice(index, 1)
+    //     this.setState({
+    //         userSpecies: copyUserSpecies
+    //     })   
+    // }
 
-    renderComments = () => {
-
-    }
+   
 
     render() {
-    
+      console.log(this.state.followedSpecies)
         return (
-            <div>
-                Nice Collection {this.props.username}!
-                {this.state.userSpecies.map((animal, index) => <Animal animalData={animal} commentors={this.state.commentors} comments={this.state.myComments} key={`${animal.common_name}-${index}`} handleClick={() => this.deleteFromPage(animal)}/>)}
-                <MyComments comments={this.state.myComments}/>
-                <Commentors commentors={this.state.commentors}/>
-                
-            </div>
+            <SpeciesList species={this.state.followedSpecies}/>
         )
     }
 }
-
-
 
