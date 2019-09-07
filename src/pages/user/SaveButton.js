@@ -18,15 +18,16 @@ export default class SaveButton extends Component {
         },
         body: JSON.stringify({
             user_id: localStorage.id,
-            species_id: this.props.speciesID
+            species_id: this.props.id
         })
     })
     .then(resp => resp.json())
-    .then(console.log)
+    
     }
 
 
     unfollowSpecies = () => {
+       
 
     }
     

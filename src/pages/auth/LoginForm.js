@@ -31,7 +31,7 @@ export class LoginForm extends Component {
             if (!userInfo.errors) {
               localStorage.token = userInfo.token
               this.props.handleLogin(userInfo)
-              this.props.history.push('/profile')
+              this.props.history.push('/species')
               
             }
         })

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import MyComments from './MyComments';
-import Commentors from './Commentors';
-import SaveButton from './SaveButton';
 import SpeciesList from '../species/SpeciesList';
+// import MyComments from './MyComments';
+// import Commentors from './Commentors';
+// import SaveButton from './SaveButton';
 
 
 
@@ -59,7 +59,6 @@ export default class Profile extends Component {
    
 
     render() {
-      console.log(this.state.followedSpecies)
         return (
             <SpeciesList species={this.state.followedSpecies}/>
         )

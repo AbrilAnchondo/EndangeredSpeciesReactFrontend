@@ -1,7 +1,6 @@
 import React from 'react'
 
 export default function FilterByGroup(props) {
-    console.log(props)
     return (
         <div>
             <form>

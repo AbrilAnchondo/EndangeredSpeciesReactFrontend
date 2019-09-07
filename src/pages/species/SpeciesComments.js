@@ -1,5 +1,5 @@
 import React from 'react'
-import { isCompletionStatement } from '@babel/types'
+
 
 export default function SpeciesComments(props) {
     return (
