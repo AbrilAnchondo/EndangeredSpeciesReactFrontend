@@ -50,28 +50,6 @@ export default class SpeciesBrowser extends Component {
     }
    }
 
-    // saveToPage = (animalData) => {
-    //     let userId = this.props.id
-    //     let speciesId = animalData.id
-        
-    //     fetch("http://localhost:3000/followings", {
-    //         method: "POST",
-    //         headers: {
-    //             "Content-Type": "application/json",
-    //             "Authorization": localStorage.token,
-    //             "Accepts": "application/json"
-                
-    //         },
-    //         body: JSON.stringify({
-    //             user_id: userId,
-    //             species_id: speciesId
-    //         })
-    //     })
-    //     .then(resp => resp.json())
-    //     .then(console.log)
-      
-         
-    // }
     
    
 

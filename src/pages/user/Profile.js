@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SpeciesList from '../species/SpeciesList';
+import { tsImportEqualsDeclaration } from '@babel/types';
 // import MyComments from './MyComments';
 // import Commentors from './Commentors';
 // import SaveButton from './SaveButton';
@@ -10,8 +11,7 @@ import SpeciesList from '../species/SpeciesList';
 export default class Profile extends Component {
     
     state = {
-        followedSpecies: [],
-       
+        followedSpecies: []
     }
 
     componentDidMount () {
@@ -34,33 +34,20 @@ export default class Profile extends Component {
          }
     }
 
-   
+    onUnfollow = (id) => {
+      let followedSpecies=this.state.followedSpecies;
+      let newFollowedSpecies = followedSpecies.filter(species => species.id !== id);
+        this.setState({
+          followedSpecies: newFollowedSpecies
+      });
 
-    
-    // deleteFromPage = (animal) => {
-    //     fetch(`http://localhost:3000/users/${this.props.id}`, {
-    //         method: "DELETE",
-    //         headers: {
-    //             "Authorization": localStorage.token
-    //         },
-    //         body: JSON.stringify(
-    //         )
-    //     })
-    //     .then(resp => resp.json())
-        
-    //     let index = this.state.userSpecies.indexOf(animal)
-    //     let copyUserSpecies = [...this.state.userSpecies]
-    //     copyUserSpecies.splice(index, 1)
-    //     this.setState({
-    //         userSpecies: copyUserSpecies
-    //     })   
-    // }
-
-   
+    }
 
     render() {
         return (
-            <SpeciesList species={this.state.followedSpecies}/>
+            <SpeciesList 
+                species={this.state.followedSpecies}
+                onUnfollow={this.onUnfollow}/>
         )
     }
 }
