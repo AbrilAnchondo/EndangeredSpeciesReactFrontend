@@ -57,14 +57,13 @@ export default class SpeciesProfile extends Component {
 
         })
     }).then(resp => resp.json())
-      .then(data => {
-            this.setState({
-                comments: [data, ...this.state.comments]
-            })
-    })
-      
-      
-   }
+       .then(data => {
+                this.setState({
+                    comments: [data, ...this.state.comments],
+                    newComment: ""
+                })
+        })
+    }
 
 
     render() {
@@ -82,7 +81,6 @@ export default class SpeciesProfile extends Component {
                     <p>Habitat: {habitat}</p>
                     <p>Conservation Measures: {conservation_measure}</p>
                     <p>Use and Trade: {use_trade}</p>
-                    <SaveButton speciesID={id}/>
                     <SpeciesComments comments={this.state.comments}/>
                     <AddComment
                         newComment={this.state.newComment}
@@ -94,4 +92,5 @@ export default class SpeciesProfile extends Component {
     }
 }
 
+//<SaveButton speciesID={id}/>
 

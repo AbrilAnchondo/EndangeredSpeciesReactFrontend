@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import SpeciesList from '../species/SpeciesList';
-import { tsImportEqualsDeclaration } from '@babel/types';
+//import { tsImportEqualsDeclaration } from '@babel/types';
 // import MyComments from './MyComments';
 // import Commentors from './Commentors';
 // import SaveButton from './SaveButton';
@@ -25,7 +25,6 @@ export default class Profile extends Component {
             .then(data => {
                 this.setState({
                     followedSpecies: data.species,
-                   
                 })
             })
         }else {

@@ -12,7 +12,8 @@ export default class SpeciesList extends Component {
             <div>
                 <h2>Learn About Endangered Species</h2>
                 {this.props.species.map(species => 
-                    <Species speciesData={species} key={species.id} 
+                    <Species speciesData={species} key={species.id}
+                        onFollow={this.props.onFollow} 
                         onUnfollow={this.props.onUnfollow}/>
                 )}
             </div>

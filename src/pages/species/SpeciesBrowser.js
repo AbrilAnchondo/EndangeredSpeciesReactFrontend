@@ -13,7 +13,7 @@ export default class SpeciesBrowser extends Component {
         filterGroupTerm: "All"
     }
 
-    componentDidMount () {
+    fetchAll () {
         if (localStorage.token) {
             let token = localStorage.token
             fetch("http://localhost:3000/species", {
@@ -33,6 +33,10 @@ export default class SpeciesBrowser extends Component {
         }
     }
 
+    componentDidMount () {
+        this.fetchAll();
+    }
+
     handleFilterByThreat = (event) => {
         this.setState({filterThreatTerm: event.target.value})
     }
@@ -50,6 +54,9 @@ export default class SpeciesBrowser extends Component {
     }
    }
 
+   onButtonClick = () => {
+       this.fetchAll();
+   }
     
    
 
@@ -57,7 +64,6 @@ export default class SpeciesBrowser extends Component {
         return (
             <div>
                 <a href="/organizations">WildLife Organizations</a><br/>
-                <a href="/activity">See other users and comments!</a><br/>
                 <hr></hr>
                 <FilterThreatType
                     filterThreatTerm={this.state.filterThreatTerm}
@@ -66,13 +72,15 @@ export default class SpeciesBrowser extends Component {
                 <FilterByGroup
                     filterGroupTerm={this.state.filterGroupTerm} 
                     handleChange={this.handleFilterByGroup}/>
-                <SpeciesList 
+                <SpeciesList
                     species={this.whichSpeciesToRender()} 
                     username={this.props.username} 
                     id={this.props.id} 
                     saveToPage={this.saveToPage} 
                     filterThreatTerm={this.state.filterThreatTerm} 
-                    filterGroupTerm={this.state.filterGroupTerm}/>
+                    filterGroupTerm={this.state.filterGroupTerm}
+                    onFollow={this.onButtonClick}
+                    onUnfollow={this.onButtonClick}/>
                 
             </div>
         )
@@ -80,3 +88,4 @@ export default class SpeciesBrowser extends Component {
 }
 
 
+//<a href="/activity">See other users and comments!</a><br/>

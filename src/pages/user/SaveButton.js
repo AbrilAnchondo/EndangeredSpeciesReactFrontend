@@ -1,10 +1,14 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { Route } from 'react-router-dom';
+
+ 
 
 export default class SaveButton extends Component {
 
-    state = {
-        isFollowed: false
-    }
+    // state = {
+    //     isFollowed: false
+    // }
    
 
     followSpecies = () => {
@@ -22,6 +26,7 @@ export default class SaveButton extends Component {
             })
         })
         .then(resp => resp.json())
+        .then(this.props.onFollow)
         
     }
 
@@ -37,19 +42,20 @@ export default class SaveButton extends Component {
         })
         .then(resp => resp.json())
         .then(this.props.onUnfollow(this.props.followingObj.species_id))
-
     }
     
 
     render() {
         return (
+           
             <div>
                 {this.props.isFollowing &&
                 <button onClick={this.unfollowSpecies}>Unfollow</button>}
 
                 {!this.props.isFollowing &&
-                <button onClick={this.followSpecies}>Follow</button>}
+               <button onClick={this.followSpecies}>Follow</button>}
             </div>
+            
         )
     }
 }

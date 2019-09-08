@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import SaveButton from '../user/SaveButton';
 import { Link } from 'react-router-dom';
 
+
 export default class Species extends Component {
 
     /*
@@ -34,11 +35,13 @@ export default class Species extends Component {
             <div>
                 <h3>Common Name: {common_name}</h3>
                 <img src={image} alt={common_name} onClick={this.handleClick}/>
-                <SaveButton
-                    isFollowing={followingObj ? true : false} 
-                    followingObj={followingObj} id={id}
-                    onUnfollow={this.props.onUnfollow}/>
-                <Link key={id} to={`/species/${id}`}>
+               <SaveButton
+                isFollowing={followingObj ? true : false} 
+                followingObj={followingObj} id={id}
+                onFollow={this.props.onFollow}
+                onUnfollow={this.props.onUnfollow}
+                />
+                 <Link key={id} to={`/species/${id}`}>
                     <button>View Details</button>
                 </Link>
             </div>
