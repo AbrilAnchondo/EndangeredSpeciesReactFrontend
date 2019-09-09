@@ -24,7 +24,8 @@ export default class SpeciesBrowser extends Component {
             .then(resp => resp.json())
             .then(data => {
                 this.setState({
-                    species: data
+                    species: data,
+                    filteredSpecies: data
                 })
             })
         } else {
@@ -38,21 +39,47 @@ export default class SpeciesBrowser extends Component {
     }
 
     handleFilterByThreat = (event) => {
-        this.setState({filterThreatTerm: event.target.value})
+        this.setState({filterThreatTerm: event.target.value});
     }
-
 
     handleFilterByGroup = (event) => {
-        this.setState({filterGroupTerm: event.target.value})
+        this.setState({filterGroupTerm: event.target.value});
     }
 
+    getFilteredSpecies () {
+        
+        let filtered = this.state.species;
+
+        // filter by threat
+        let threat = this.state.filterThreatTerm;
+        filtered = filtered.filter(species => 
+            (threat === 'All') ? true : (species.threat_type === threat));
+
+        // then filter by group
+        let group = this.state.filterGroupTerm;
+        filtered = filtered.filter(species => 
+            (group === 'All') ? true : (species.group === group));
+
+        return filtered;
+    }
+
+    /*
    whichSpeciesToRender = () => {
+    let copiedSpecies = [...this.state.species];
     if(this.state.filterThreatTerm === "All"){
         return this.state.species
     } else {
         return this.state.species.filter(species => species.threat_type === this.state.filterThreatTerm)
     }
-   }
+
+    if(this.state.filterGroupTerm === "All"){
+        return this.state.species
+    } else {
+        return this.state.species.filter(species => species.group === this.state.filterGroupTerm)
+    }
+    */
+    
+   
 
    onButtonClick = () => {
        this.fetchAll();
@@ -73,7 +100,7 @@ export default class SpeciesBrowser extends Component {
                     filterGroupTerm={this.state.filterGroupTerm} 
                     handleChange={this.handleFilterByGroup}/>
                 <SpeciesList
-                    species={this.whichSpeciesToRender()} 
+                    species={this.getFilteredSpecies()} 
                     username={this.props.username} 
                     id={this.props.id} 
                     saveToPage={this.saveToPage} 
