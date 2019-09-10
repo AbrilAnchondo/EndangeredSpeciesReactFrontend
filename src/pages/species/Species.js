@@ -1,6 +1,14 @@
 import React, { Component } from 'react'
 import SaveButton from '../user/SaveButton';
 import { Link } from 'react-router-dom';
+import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol } from 'mdbreact';
+
+const box = {
+  width: "22rem",
+  height: "22rem",
+  margin: "15px",
+  boxShadow: "0 4px 8px 0 rgba(0,0,0,0.5)",
+}
 
 
 export default class Species extends Component {
@@ -30,24 +38,30 @@ export default class Species extends Component {
     render() {
         //const isFollowing = this.userIsFollowing();
         const followingObj = this.getUserFollowing();
-        const {common_name, image, id,} = this.props.speciesData
+        const {common_name, image, id, scientific_name} = this.props.speciesData
         return (
-            <div>
-                <h3>Common Name: {common_name}</h3>
-                <img src={image} alt={common_name} onClick={this.handleClick}/>
-               <SaveButton
-                isFollowing={followingObj ? true : false} 
-                followingObj={followingObj} id={id}
-                onFollow={this.props.onFollow}
-                onUnfollow={this.props.onUnfollow}
-                />
-                 <Link key={id} to={`/species/${id}`}>
-                    <button>View Details</button>
-                </Link>
-            </div>
+          <MDBCol>
+            <MDBCard style={box}>
+              <MDBCardImage className="img-fluid" src={image} waves alt={common_name} onClick={this.handleClick}/>
+                <MDBCardBody>
+                  <MDBCardTitle>{common_name}</MDBCardTitle>
+                    <MDBCardText style={{fontStyle: "italic"}}>
+                      {scientific_name}
+                    </MDBCardText>                    
+                    <SaveButton
+                    isFollowing={followingObj ? true : false} 
+                    followingObj={followingObj} id={id}
+                    onFollow={this.props.onFollow}
+                    onUnfollow={this.props.onUnfollow}
+                    />
+                    <Link key={id} to={`/species/${id}`}>
+                        <button>View Details</button>
+                    </Link>                   
+              </MDBCardBody>
+            </MDBCard>
+          </MDBCol>
+            
         )
     }
 }
 
-
-          

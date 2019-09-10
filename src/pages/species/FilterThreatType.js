@@ -1,13 +1,17 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+
+const filter = {
+    textAlign: "center"
+}
 
 export default class FilterThreatType extends Component {
     render() {
         return (
-            <div>
+            <div style={filter}>
                 <form>
                     <label>
                     Filter by Threat Type:
-                    <select value={this.props.filterThreatTerm} onChange={this.props.handleChange}>
+                    <select className="browser-default custom-select" value={this.props.filterThreatTerm} onChange={this.props.handleChange}>
                         <option value="All">All</option>
                         <option value="Extinct">Extinct(E)</option>
                         <option value="Extinct in the Wild">Extinct in the wild(EW)</option>

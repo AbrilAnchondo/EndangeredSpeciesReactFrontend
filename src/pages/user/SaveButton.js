@@ -47,14 +47,13 @@ export default class SaveButton extends Component {
 
     render() {
         return (
-           
-            <div>
+            <>
                 {this.props.isFollowing &&
                 <button onClick={this.unfollowSpecies}>Unfollow</button>}
 
                 {!this.props.isFollowing &&
                <button onClick={this.followSpecies}>Follow</button>}
-            </div>
+            </>
             
         )
     }

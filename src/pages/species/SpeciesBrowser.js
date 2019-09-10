@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import SpeciesList from './SpeciesList';
 import FilterThreatType from './FilterThreatType';
 import FilterByGroup from './FilterByGroup';
+import Title from './Title';
 
 
 
@@ -90,8 +91,9 @@ export default class SpeciesBrowser extends Component {
     render() {
         return (
             <div>
-                <a href="/organizations">WildLife Organizations</a><br/>
+                <h3><a href="/organizations">WildLife Organizations</a><br/></h3>
                 <hr></hr>
+                <Title />
                 <FilterThreatType
                     filterThreatTerm={this.state.filterThreatTerm}
                     handleChange={this.handleFilterByThreat}

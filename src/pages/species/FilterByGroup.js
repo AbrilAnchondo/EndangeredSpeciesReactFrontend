@@ -1,12 +1,16 @@
-import React from 'react'
+import React from 'react';
+
+const filter = {
+    textAlign: "center"
+}
 
 export default function FilterByGroup(props) {
     return (
-        <div>
+        <div style={filter}>
             <form>
                 <label>
                 Filter by Group:
-                <select value={props.filterGroupTerm} onChange={props.handleChange}>
+                <select className="browser-default custom-select" value={props.filterGroupTerm} onChange={props.handleChange}>
                     <option value="All">All</option>
                     <option value="Marine Mammals">Marine Mammals</option>
                     <option value="Big Cats">Big Cats</option>

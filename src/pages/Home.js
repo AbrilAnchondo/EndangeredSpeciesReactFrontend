@@ -1,13 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import '../index.css';
 
 export class Home extends Component {
 
-   
-
-
     render() {
         return (
-            <div >
+            <div className="bg">
                <h1 >Home Page</h1>
             </div>
         )
