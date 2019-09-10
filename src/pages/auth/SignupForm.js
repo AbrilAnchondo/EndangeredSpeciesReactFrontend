@@ -40,7 +40,8 @@ export default class SignupForm extends Component {
 
     render() {
         return (
-            <MDBContainer style={{marginTop: "10em", marginLeft: "33%"}}>
+            
+            <MDBContainer style={{marginTop: "10em", marginLeft: "30%"}} >
                 <MDBRow>
                     <MDBCol md="6">
                         <MDBCard>
@@ -73,7 +74,7 @@ export default class SignupForm extends Component {
                                     />
                                 </div>
                                 <div className="text-center py-4 mt-3">
-                                <MDBBtn color="cyan" type="submit">
+                                <MDBBtn color="green" type="submit">
                                     Sign Up
                                 </MDBBtn>
                                 </div>
@@ -83,6 +84,7 @@ export default class SignupForm extends Component {
                     </MDBCol>
                 </MDBRow>
             </MDBContainer>
+            
         )
     }
 }

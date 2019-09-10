@@ -30,6 +30,15 @@ body, html {
   background-size: cover;
   }
 
+  .bgs {
+    background-image: url("https://images.unsplash.com/photo-1557607972-9e2444c59a23?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+  }
+
   .column-layout {
     max-width: 1200px;
     margin: 40px auto 0 auto;

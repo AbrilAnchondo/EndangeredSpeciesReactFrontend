@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import SpeciesList from './SpeciesList';
 import FilterThreatType from './FilterThreatType';
 import FilterByGroup from './FilterByGroup';
+import Organizations from '../Organizations';
+import { Link } from 'react-router-dom';
 import Title from './Title';
 
 
@@ -64,35 +66,14 @@ export default class SpeciesBrowser extends Component {
         return filtered;
     }
 
-    /*
-   whichSpeciesToRender = () => {
-    let copiedSpecies = [...this.state.species];
-    if(this.state.filterThreatTerm === "All"){
-        return this.state.species
-    } else {
-        return this.state.species.filter(species => species.threat_type === this.state.filterThreatTerm)
-    }
-
-    if(this.state.filterGroupTerm === "All"){
-        return this.state.species
-    } else {
-        return this.state.species.filter(species => species.group === this.state.filterGroupTerm)
-    }
-    */
-    
-   
 
    onButtonClick = () => {
        this.fetchAll();
    }
     
-   
-
     render() {
         return (
             <div>
-                <h3><a href="/organizations">WildLife Organizations</a><br/></h3>
-                <hr></hr>
                 <Title />
                 <FilterThreatType
                     filterThreatTerm={this.state.filterThreatTerm}
@@ -101,6 +82,7 @@ export default class SpeciesBrowser extends Component {
                 <FilterByGroup
                     filterGroupTerm={this.state.filterGroupTerm} 
                     handleChange={this.handleFilterByGroup}/>
+                <p  style={{textAlign: "center"}}><Link to="/organizations">Wildlife Organizations</Link></p>
                 <SpeciesList
                     species={this.getFilteredSpecies()} 
                     username={this.props.username} 

@@ -92,8 +92,14 @@ export class App extends Component {
         path="/profile" 
         render={(routerProps)=> <Profile  {...routerProps} username={this.state.username} id={this.state.id}/>}
         />
+        <Route 
+        exact 
+        path="/organizations" 
+        render={(routerProps)=> <Organizations  {...routerProps} username={this.state.username} id={this.state.id}/>}
+        />
         </div>
      </Switch>
+     
 
    )
   }
