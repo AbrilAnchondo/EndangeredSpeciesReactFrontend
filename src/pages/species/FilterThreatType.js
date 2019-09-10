@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
 
-const filter = {
-    textAlign: "center"
+const container = {
+    textAlign: "center",
+   
+
+
 }
+
+
 
 export default class FilterThreatType extends Component {
     render() {
         return (
-            <div style={filter}>
+            <div style={container}>
                 <form>
                     <label>
                     Filter by Threat Type:

@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
 
 export default class SignupForm extends Component {
 
@@ -39,16 +40,51 @@ export default class SignupForm extends Component {
 
     render() {
         return (
-            <div>
-                 <h2>Signup</h2>
-                <form onSubmit={this.handleSubmit}>
-                <label htmlFor="username">Username</label>
-                <input type="text" name="username" value={this.state.username} id="username" onChange={this.handleChange}/>
-                <label htmlFor="password">Password</label>
-                <input type="password" name="password" value={this.state.password} id="password" onChange={this.handleChange}/>
-                <input type="submit" value="Signup"/>
-                </form>
-            </div>
+            <MDBContainer style={{marginTop: "10em", marginLeft: "33%"}}>
+                <MDBRow>
+                    <MDBCol md="6">
+                        <MDBCard>
+                            <MDBCardBody>
+                                <form onSubmit={this.handleSubmit}>
+                                <p className="h4 text-center py-4">Signup</p>
+                                <div className="grey-text">
+                                    <MDBInput
+                                        label="Username"
+                                        icon="user"
+                                        group
+                                        type="text"
+                                        name="username"
+                                        id="username"
+                                        value={this.state.username}
+                                        onChange={this.handleChange}
+                                       
+                                    />
+
+                                    <MDBInput
+                                        label="Your password"
+                                        icon="lock"
+                                        group
+                                        type="password"
+                                        name="password"
+                                        id="password"
+                                        value={this.state.password}
+                                        onChange={this.handleChange}
+                                        
+                                    />
+                                </div>
+                                <div className="text-center py-4 mt-3">
+                                <MDBBtn color="cyan" type="submit">
+                                    Sign Up
+                                </MDBBtn>
+                                </div>
+                                </form>
+                            </MDBCardBody>
+                        </MDBCard>
+                    </MDBCol>
+                </MDBRow>
+            </MDBContainer>
         )
     }
 }
+
+

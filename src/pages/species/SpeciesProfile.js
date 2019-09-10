@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import SpeciesComments from './SpeciesComments';
 import AddComment from './AddComment';
 import SaveButton from '../user/SaveButton';
+import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
 
 export default class SpeciesProfile extends Component {
 
@@ -73,24 +74,38 @@ export default class SpeciesProfile extends Component {
 
         return (
             <div>
-                <h3>Common Name: {common_name}</h3>
-                    <p>Scientific Name: {scientific_name}</p>
-                    <p>Threat Type: {threat_type}</p>
-                    <img src={image} alt={common_name} />
-                    <p>Population: {population}</p>
-                    <p>Habitat: {habitat}</p>
-                    <p>Conservation Measures: {conservation_measure}</p>
-                    <p>Use and Trade: {use_trade}</p>
-                    <SpeciesComments comments={this.state.comments}/>
-                    <AddComment
-                        newComment={this.state.newComment}
-                        handleChange={this.handleChange}
-                        handleSubmit={this.handleSubmit}
-                         />
+                <div><img src={image} alt={common_name}/></div>
+                <div className="column-layout">
+                    <div className="main-column">
+                        <h3 style={{fontWeight: "bold"}}>{common_name}</h3>
+                        <p style={{fontStyle: "italic"}}>{scientific_name}</p>
+                        <p style={{fontWeight: "bold"}}>Threat Type <br></br></p>
+                        <p style={{fontVariantCaps: "all-small-caps", color: "red"}}>{threat_type}</p>
+                        <p style={{fontWeight: "bold"}}>Conservation Measures <br></br></p>
+                        <p>{conservation_measure}</p>
+                        <p style={{fontWeight: "bold"}}>Use and Trade {use_trade}</p>
+                    </div>
+                    <div className="sidebar-one">
+                        <p  style={{fontWeight: "bold"}}>Population<br></br></p>
+                        <p>{population}</p>
+                    </div>
+                    <div className="sidebar-two">
+                        <p  style={{fontWeight: "bold"}}>Habitat<br></br> </p>
+                        <p>{habitat}</p>
+                    </div>
+                </div>
+                <SpeciesComments comments={this.state.comments}/>
+                <AddComment
+                    newComment={this.state.newComment}
+                    handleChange={this.handleChange}
+                    handleSubmit={this.handleSubmit}
+                />
+                    
             </div>
-        )
+            
+            )
+        }
     }
-}
-
-//<SaveButton speciesID={id}/>
-
+    
+   
+    

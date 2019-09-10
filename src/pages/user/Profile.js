@@ -5,6 +5,12 @@ import SpeciesList from '../species/SpeciesList';
 // import Commentors from './Commentors';
 // import SaveButton from './SaveButton';
 
+const container = {
+
+   margin: "50px 30px 30px 30px",
+   padding: "30px"
+}
+
 
 
 
@@ -44,9 +50,18 @@ export default class Profile extends Component {
 
     render() {
         return (
-            <SpeciesList 
-                species={this.state.followedSpecies}
-                onUnfollow={this.onUnfollow}/>
+           <div style={container}>
+               <div>
+                    <h1>Hi {this.props.username},</h1>
+                </div>
+                <div>
+                    <h3><a href="/species">Add to your collection...</a></h3>
+                </div>
+                <div> <SpeciesList 
+                    species={this.state.followedSpecies}
+                    onUnfollow={this.onUnfollow}/>
+                </div>
+           </div>
         )
     }
 }
