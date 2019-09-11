@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import SpeciesList from '../species/SpeciesList';
-//import { tsImportEqualsDeclaration } from '@babel/types';
-// import MyComments from './MyComments';
-// import Commentors from './Commentors';
-// import SaveButton from './SaveButton';
+import OtherUsers from './OtherUsers';
 
 const container = {
 
@@ -51,6 +48,7 @@ export default class Profile extends Component {
     render() {
         return (
            <div style={container}>
+               <OtherUsers />
                <div>
                     <h1>Hi {this.props.username},</h1>
                 </div>

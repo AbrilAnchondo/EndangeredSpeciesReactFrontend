@@ -92,7 +92,8 @@ export default class SpeciesBrowser extends Component {
                     filterGroupTerm={this.state.filterGroupTerm}
                     onFollow={this.onButtonClick}
                     onUnfollow={this.onButtonClick}/>
-                
+                <div style={{ height: '200px' }}/>
+
             </div>
         )
     }

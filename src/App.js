@@ -9,6 +9,7 @@ import SpeciesPage from './pages/species/SpeciesPage';
 import Profile from './pages/user/Profile';
 import Organizations from './pages/Organizations';
 import About from './pages/About';
+import Footer from './Footer'
 
 import './App.css';
 import NavBar from './NavBar';
@@ -71,12 +72,6 @@ export class App extends Component {
         path="/species"
         render={(routerProps)=> <SpeciesPage {...routerProps} username={this.state.username} id={this.state.id}/>}
          />
-        
-        <Route 
-        exact 
-        path="/organizations" 
-        render={(routerProps)=> <Organizations  {...routerProps}/>}
-        />
         <Route 
         exact 
         path="/logout" 
@@ -97,6 +92,7 @@ export class App extends Component {
         path="/organizations" 
         render={(routerProps)=> <Organizations  {...routerProps} username={this.state.username} id={this.state.id}/>}
         />
+        <Footer />
         </div>
      </Switch>
      

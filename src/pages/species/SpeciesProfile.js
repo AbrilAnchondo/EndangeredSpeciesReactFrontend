@@ -100,7 +100,8 @@ export default class SpeciesProfile extends Component {
                     handleChange={this.handleChange}
                     handleSubmit={this.handleSubmit}
                 />
-                    
+                <div style={{ height: '200px' }}/>
+
             </div>
             
             )
