@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import SpeciesComments from './SpeciesComments';
 import AddComment from './AddComment';
-import SaveButton from '../user/SaveButton';
+import OtherUsers from '../user/OtherUsers';
 import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
 
 export default class SpeciesProfile extends Component {
@@ -75,6 +75,9 @@ export default class SpeciesProfile extends Component {
         return (
             <div>
                 <div><img src={image} alt={common_name}/></div>
+                <div>
+                    <OtherUsers id={this.props.match.params.id} />
+                </div>
                 <div className="column-layout">
                     <div className="main-column">
                         <h3 style={{fontWeight: "bold"}}>{common_name}</h3>
@@ -100,6 +103,7 @@ export default class SpeciesProfile extends Component {
                     handleChange={this.handleChange}
                     handleSubmit={this.handleSubmit}
                 />
+                 
                 <div style={{ height: '200px' }}/>
 
             </div>

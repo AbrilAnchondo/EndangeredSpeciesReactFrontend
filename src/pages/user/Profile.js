@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import SpeciesList from '../species/SpeciesList';
-import OtherUsers from './OtherUsers';
+
 
 const container = {
 
@@ -27,7 +27,7 @@ export default class Profile extends Component {
             .then(resp => resp.json())
             .then(data => {
                 this.setState({
-                    followedSpecies: data.species,
+                    followedSpecies: data.species
                 })
             })
         }else {
@@ -48,7 +48,6 @@ export default class Profile extends Component {
     render() {
         return (
            <div style={container}>
-               <OtherUsers />
                <div>
                     <h1>Hi {this.props.username},</h1>
                 </div>

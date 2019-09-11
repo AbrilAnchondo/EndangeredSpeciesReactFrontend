@@ -7,13 +7,12 @@ export default class OtherUsers extends Component {
     }
 
     componentDidMount () {
-        fetch('http://localhost:3000/species', {
+        fetch(`http://localhost:3000/species/${this.props.id}`, {
             headers: {
                 "Authorization": localStorage.token
             }
         })
         .then(resp => resp.json())
-        //.then(console.log)
         .then(data => {
             this.setState({
                 speciesFollowings: data.followings
@@ -22,16 +21,16 @@ export default class OtherUsers extends Component {
     }
 
 
-    // renderFollowers = () => {
-    //     this.state.speciesFollowings.map(following => <div><h3>{followings.species_id}</h3>
-    //     <p>{following.user.username}</p>
-    //     </div>)
-    // }
+    renderFollowers = () => {
+        this.state.speciesFollowings.map(following => <div><p>{following.user.username}</p></div>)
+    }
 
     render() {
+        console.log(this.state.speciesFollowings)
         return (
             <div>
-                
+                {this.state.speciesFollowings.map(following => 
+                <p>{following.user.username}</p>)}
             </div>
         )
     }
