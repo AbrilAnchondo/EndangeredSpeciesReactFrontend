@@ -82,7 +82,7 @@ export default class SpeciesBrowser extends Component {
                 <FilterByGroup
                     filterGroupTerm={this.state.filterGroupTerm} 
                     handleChange={this.handleFilterByGroup}/>
-                <p  style={{textAlign: "center"}}><Link to="/organizations">Wildlife Organizations</Link></p>
+                <p  style={{textAlign: "center", fontWeight: "bold"}}><Link to="/organizations">Wildlife Organizations</Link></p>
                 <SpeciesList
                     species={this.getFilteredSpecies()} 
                     username={this.props.username} 

@@ -8,8 +8,15 @@ const container = {
    padding: "30px"
 }
 
+const title ={
+    margin: "30px",
+    fontFamily: "'Lucida Console' Times serif"
+    
+}
 
-
+const add = {
+    margin: "30px"
+}
 
 export default class Profile extends Component {
     
@@ -49,15 +56,16 @@ export default class Profile extends Component {
         return (
            <div style={container}>
                <div>
-                    <h1>Hi {this.props.username},</h1>
+                    <h1 style={title}>Hi {this.props.username},</h1>
                 </div>
                 <div>
-                    <h3><a href="/species">Add to your collection...</a></h3>
+                    <h3 style={add}><a href="/species">Add to your collection...</a></h3>
                 </div>
                 <div> <SpeciesList 
                     species={this.state.followedSpecies}
                     onUnfollow={this.onUnfollow}/>
                 </div>
+                <div style={{ height: '200px' }}/>
            </div>
         )
     }

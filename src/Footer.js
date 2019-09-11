@@ -15,7 +15,7 @@ const Footer = () => {
       <MDBContainer fluid className="text-center text-md-left">
         <MDBRow>
           <MDBCol md="6" style={{textAlign: "center", marginLeft: "25%"}}>
-            <h5 className="title">"What you do makes a difference, and you have to decide what kind of difference you want to make."</h5>
+            <h5 className="quote">"What you do makes a difference, and you have to decide what kind of difference you want to make."</h5>
             <p>- Jane Goodall</p>
           </MDBCol>
           <MDBCol md="6">

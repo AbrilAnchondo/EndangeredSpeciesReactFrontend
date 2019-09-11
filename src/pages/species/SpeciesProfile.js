@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 import SpeciesComments from './SpeciesComments';
 import AddComment from './AddComment';
 import OtherUsers from '../user/OtherUsers';
-import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
+//import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
+
+
 
 export default class SpeciesProfile extends Component {
 
@@ -74,19 +76,21 @@ export default class SpeciesProfile extends Component {
 
         return (
             <div>
-                <div><img src={image} alt={common_name}/></div>
-                <div>
-                    <OtherUsers id={this.props.match.params.id} />
+                <div className="pic"><img src={image} alt={common_name}/></div>
+                <div className="follows">
+                        <OtherUsers id={this.props.match.params.id} />
                 </div>
+                
                 <div className="column-layout">
                     <div className="main-column">
                         <h3 style={{fontWeight: "bold"}}>{common_name}</h3>
                         <p style={{fontStyle: "italic"}}>{scientific_name}</p>
                         <p style={{fontWeight: "bold"}}>Threat Type <br></br></p>
-                        <p style={{fontVariantCaps: "all-small-caps", color: "red"}}>{threat_type}</p>
+                        <p style={{fontVariantCaps: "all-small-caps", color: "red", fontWeight: "bold"}}>{threat_type}</p>
                         <p style={{fontWeight: "bold"}}>Conservation Measures <br></br></p>
                         <p>{conservation_measure}</p>
-                        <p style={{fontWeight: "bold"}}>Use and Trade {use_trade}</p>
+                        <p style={{fontWeight: "bold"}}>Use and Trade <br></br></p>
+                        <p>{use_trade}</p>
                     </div>
                     <div className="sidebar-one">
                         <p  style={{fontWeight: "bold"}}>Population<br></br></p>
@@ -111,6 +115,4 @@ export default class SpeciesProfile extends Component {
             )
         }
     }
-    
-   
     

@@ -10,8 +10,8 @@ export default function SpeciesComments(props) {
     
     return (
         <div style={allComments}>
-            <h3>Comments:</h3>
-            {props.comments.map(comment => <p key={comment.id}>{comment.user.username} - {comment.content}</p>)}
+            <h3 className="comments">Comments:</h3>
+            {props.comments.map(comment => <p className="comments" key={comment.id}>{comment.user.username} - {comment.content}</p>)}
         </div>
     )
 }

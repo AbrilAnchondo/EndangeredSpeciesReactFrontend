@@ -38,11 +38,11 @@ export default class Species extends Component {
     render() {
         //const isFollowing = this.userIsFollowing();
         const followingObj = this.getUserFollowing();
-        const {common_name, image, id, scientific_name} = this.props.speciesData
+        const {common_name, image, id, scientific_name, threat_type} = this.props.speciesData
         return (
           <MDBCol>
             <MDBCard style={box}>
-              <MDBCardImage className="img-fluid" src={image} waves alt={common_name} onClick={this.handleClick}/>
+              <MDBCardImage className="img-fluid" src={image} waves alt={common_name} onClick={this.handleClick} style={{width: "100%"}}/>
                 <MDBCardBody>
                   <MDBCardTitle>{common_name}</MDBCardTitle>
                     <MDBCardText style={{fontStyle: "italic"}}>

@@ -28,9 +28,10 @@ export default class OtherUsers extends Component {
     render() {
         console.log(this.state.speciesFollowings)
         return (
-            <div>
+            <div className="users-container">
+                <h4 className="users">Other users are also interested in this species!</h4>
                 {this.state.speciesFollowings.map(following => 
-                <p>{following.user.username}</p>)}
+                <p className="users">{following.user.username}</p>)}
             </div>
         )
     }

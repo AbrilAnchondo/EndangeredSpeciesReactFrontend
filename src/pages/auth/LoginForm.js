@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn, MDBCard, MDBCardBody } from 'mdbreact';
 
-export class LoginForm extends Component {
+export default class LoginForm extends Component {
 
     state = {
         username: "",
@@ -42,9 +42,9 @@ export class LoginForm extends Component {
     render() {
         return (
             <div className="bgl">
-                <MDBContainer style={{marginTop: "0em", marginLeft: "30%"}}>
+            <MDBContainer style={{marginTop: "0", marginLeft: "40%"}}>
                 <MDBRow>
-                    <MDBCol md="6">
+                    <MDBCol md="24">
                         <MDBCard>
                             <MDBCardBody>
             
@@ -90,7 +90,7 @@ export class LoginForm extends Component {
     }
 }
 
-export default LoginForm
+
 
 
                   
