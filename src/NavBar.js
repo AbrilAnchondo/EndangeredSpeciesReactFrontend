@@ -52,7 +52,7 @@ const NavBar = (props) => {
         to="/about"
         exact activeStyle={{color: 'white'}} style={navText}
         >
-        About
+        Why it matters...
       </NavLink>
 
       <NavLink 

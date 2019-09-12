@@ -42,9 +42,9 @@ export default class LoginForm extends Component {
     render() {
         return (
             <div className="bgl">
-            <MDBContainer style={{marginTop: "0", marginLeft: "40%"}}>
+            <MDBContainer style={{marginTop: "0", marginLeft: "30%"}}>
                 <MDBRow>
-                    <MDBCol md="24">
+                    <MDBCol md="6">
                         <MDBCard>
                             <MDBCardBody>
             

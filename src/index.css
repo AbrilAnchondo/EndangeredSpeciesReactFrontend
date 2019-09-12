@@ -85,6 +85,7 @@ body, html {
   .main-column {
     flex: 3;
     order: 2;
+    border-bottom: solid;
   }
 
   .sidebar-one {
@@ -102,7 +103,7 @@ body, html {
     margin-bottom: 0;
   }
 
-  .bga {
+  /* .bga {
     margin-top: 0;
     background-image: url("https://images.unsplash.com/photo-1528728242126-edf25d62f1c0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
     height: 100vh;
@@ -110,25 +111,119 @@ body, html {
     background-repeat: no-repeat;
     background-size: cover;
    
+  } */
+  
+  .big-container {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("https://images.unsplash.com/photo-1517649281203-dad836b4abe5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
   }
 
+  .flip-card-container {
+    width: 220px;
+    height: 320px;
+    perspective: 1000px;
+    font-family: 'Indie Flower', cursive;
+  }
+
+  .flip-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+  }
+
+  .flip-card-container:hover .flip-card {
+    transform: rotateY(180deg); /* <=>  rotateY(.5turn) */
+  }
+
+  /* Position the front and back side */
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border-radius: 0.5rem; */
+  }
+
+  .flip-card-front {
+    background-color: black;
+    color: #fff;
+    padding: 10px
+  }
+
+  .flip-card-back {
+    padding: 10px;
+    background-color: rgb(43, 116, 28);
+    color: #fff;
+    transform: rotateY(180deg);
+  }
+ 
+  .flip-card-front img {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* .flip-card-back p {
+    text-align: center;
+    margin: 1rem;
+    font-size: 1.4rem;
+    line-height: 1.5rem;
+  }
+  .flip-card-back p span {
+    display: block;
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: bold;
+    margin-top: 1.25rem;
+  } */
+
   
-.about-container {
-  display: flex;
-}
 
-.users {
+
+  .users {
+    font-family: 'Indie Flower', cursive;
+  }
+
+  .users-container {
+    margin-top: 15px;
+  }
+
+  .comments {
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.5em;
+    
+  }
+
+  .orgContainer {
+    margin: 30px;
+    padding: 30px;
+    font-family: 'Indie Flower', cursive;
+  }
+
+  .orgList {
+  border: solid grey;
+  margin-top: 5px;
+  margin-left: 25%;
+  padding: 20px;
+  width: 50%;
+  text-align: center;
+  font-size: 1.8em;
+  box-shadow: 5px 5px 5px grey;
   font-family: 'Indie Flower', cursive;
-}
-
-.users-container {
-  margin-top: 15px;
-}
-
-.comments {
-  font-family: 'Indie Flower', cursive;
-  font-size: 1em;
-}
-
+  }
 
   

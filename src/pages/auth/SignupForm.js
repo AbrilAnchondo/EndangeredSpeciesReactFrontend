@@ -41,9 +41,9 @@ export default class SignupForm extends Component {
     render() {
         return (
            <div className="bgs" > 
-            <MDBContainer  style={{marginTop: "0em", marginLeft: "40%"}} >
+            <MDBContainer  style={{marginTop: "0em", marginLeft: "30%"}} >
                 <MDBRow>
-                    <MDBCol md="24">
+                    <MDBCol md="6">
                         <MDBCard>
                             <MDBCardBody>
                                 <form onSubmit={this.handleSubmit}>
