@@ -25,7 +25,7 @@ export default class FilterThreatType extends Component {
                         <option value="Vulnerable">Vulnerable(V)</option> 
                         <option value="Near Threatened">Near Threatened(NT)</option>
                         <option value="Least Concern">Least Concern(LC)</option>
-                        <option value="Data Defficient">Data Defficient(DD)</option>
+                        <option value="Data Deficient">Data Defficient(DD)</option>
                         <option value="Not Evaluated">Not Evaluated(NE)</option>
                     </select>
                     </label>

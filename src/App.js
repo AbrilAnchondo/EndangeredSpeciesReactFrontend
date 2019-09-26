@@ -8,6 +8,7 @@ import Logout from './pages/auth/Logout';
 import SpeciesPage from './pages/species/SpeciesPage';
 import Profile from './pages/user/Profile';
 import Organizations from './pages/Organizations';
+import Map from './pages/Map';
 import About from './pages/About';
 import Footer from './Footer'
 
@@ -91,6 +92,11 @@ export class App extends Component {
         exact 
         path="/organizations" 
         render={(routerProps)=> <Organizations  {...routerProps} username={this.state.username} id={this.state.id}/>}
+        />
+        <Route 
+        exact 
+        path="/map" 
+        render={(routerProps)=> <Map  {...routerProps} />}
         />
         <Footer />
         </div>
