@@ -4,6 +4,7 @@ import { GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow } from "reac
 
 
 
+
 function MyMap () {
     
     const [selectedSanctuary, setSelectedSanctuary] = useState(null);
@@ -27,8 +28,9 @@ function MyMap () {
                                 setSelectedSanctuary(null);
                             }}>
                     <div>
-                        <h6>{selectedSanctuary.name}</h6> 
+                        <h6 style={{fontWeight: "bold"}}>{selectedSanctuary.name}</h6> 
                         <p>{selectedSanctuary.address}</p>
+                        <p><a href={selectedSanctuary.website}>{selectedSanctuary.website}</a></p>
                     </div>
                 </InfoWindow>
             )}
