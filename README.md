@@ -16,6 +16,22 @@ Created the visual design incorporating CSS, Flexbox and MDBootstrap and photos 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+You will have to use your own Google maps api key, to store it:
+
+## Helpful tip to securely store your api key:
+
+  Create a .env file in your root directory
+  
+  Inside that .env file create a variable and set it equal to your api key and prepend REACT_APP to the name of your variable:
+    ``` REACT_APP_GOOGLE_API_KEY = your_api_key ```
+    
+  Add .env file to .gitignore file:
+    ``` .env ```
+    
+  Acces your key by replacing the actual api key with your variable preceded by process.env:
+    ``` process.env.REACT_APP_GOOGLE_API_KEY ```
+  
+
 ## Available Scripts
 
 In the project directory, you can run:
