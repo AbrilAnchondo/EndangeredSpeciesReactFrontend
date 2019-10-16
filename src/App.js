@@ -10,7 +10,9 @@ import Profile from './pages/user/Profile';
 import Organizations from './pages/Organizations';
 import Map from './pages/Map';
 import About from './pages/About';
-import Footer from './Footer'
+import Footer from './Footer';
+import Messages from './pages/user/Messages';
+
 
 import './App.css';
 import NavBar from './NavBar';
@@ -92,6 +94,11 @@ export class App extends Component {
         exact 
         path="/organizations" 
         render={(routerProps)=> <Organizations  {...routerProps} username={this.state.username} id={this.state.id}/>}
+        />
+        <Route 
+        exact 
+        path="/messages" 
+        render={(routerProps)=> <Messages  {...routerProps} username={this.state.username} id={this.state.id}/>}
         />
         <Route 
         exact 

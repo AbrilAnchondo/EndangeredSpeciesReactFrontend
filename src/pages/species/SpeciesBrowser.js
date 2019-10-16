@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import SpeciesList from './SpeciesList';
 import FilterThreatType from './FilterThreatType';
 import FilterByGroup from './FilterByGroup';
-import Organizations from '../Organizations';
 import { Link } from 'react-router-dom';
 import Title from './Title';
 
@@ -83,7 +82,7 @@ export default class SpeciesBrowser extends Component {
                     filterGroupTerm={this.state.filterGroupTerm} 
                     handleChange={this.handleFilterByGroup}/>
                 <p  style={{textAlign: "center", fontWeight: "bold"}}><Link to="/organizations">Wildlife Organizations</Link></p>
-                <p  style={{textAlign: "center", fontWeight: "bold"}}><Link to="/map">Some amazing Animal Sancutaries...</Link></p>
+                <p  style={{textAlign: "center", fontWeight: "bold"}}><Link to="/map">Some Sancutaries in America and a few other around the world...</Link></p>
                 <SpeciesList
                     species={this.getFilteredSpecies()} 
                     username={this.props.username} 
@@ -101,4 +100,4 @@ export default class SpeciesBrowser extends Component {
 }
 
 
-//<a href="/activity">See other users and comments!</a><br/>
+
