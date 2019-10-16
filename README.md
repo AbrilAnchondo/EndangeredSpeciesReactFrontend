@@ -14,6 +14,8 @@ Carefully selected all data used in the project and integrated Google Maps API.
 
 Created the visual design incorporating CSS, Flexbox and MDBootstrap and photos from Unsplashed website.
 
+You can find the backend for this project on my repos, pinned at the top.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 You will have to use your own Google maps api key, to store it:
