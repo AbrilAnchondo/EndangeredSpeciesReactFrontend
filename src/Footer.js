@@ -19,21 +19,7 @@ const Footer = () => {
             <p>- Jane Goodall</p>
           </MDBCol>
           <MDBCol md="6">
-            <h5 className="title"></h5>
-            <ul>
-              <li className="list-unstyled">
-                <a href="#!"></a>
-              </li>
-              <li className="list-unstyled">
-                <a href="#!"></a>
-              </li>
-              <li className="list-unstyled">
-                <a href="#!"></a>
-              </li>
-              <li className="list-unstyled">
-                <a href="#!"></a>
-              </li>
-            </ul>
+
           </MDBCol>
         </MDBRow>
       </MDBContainer>

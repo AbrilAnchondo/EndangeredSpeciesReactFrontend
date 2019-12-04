@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import SaveButton from '../user/SaveButton';
 import { Link } from 'react-router-dom';
-import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol } from 'mdbreact';
+import { MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol } from 'mdbreact';
+//MDBBtn
+
 
 const box = {
   width: "22rem",
@@ -12,7 +14,7 @@ const box = {
 
 
 export default class Species extends Component {
-
+  
     /*
     userIsFollowing () {
       const followings =  this.props.speciesData.followings;
@@ -24,9 +26,11 @@ export default class Species extends Component {
       return false;
     }
     */
-     
+    
+    //gets an array of followingObj for that species
     getUserFollowing () {
         const followings = this.props.speciesData.followings;
+        console.log(followings)
         for (let i=0; i < followings.length; i++){
           if (followings[i].user_id == localStorage.id) {
               return followings[i];
@@ -35,10 +39,11 @@ export default class Species extends Component {
         return null;
       }
 
+      
     render() {
         //const isFollowing = this.userIsFollowing();
         const followingObj = this.getUserFollowing();
-        const {common_name, image, id, scientific_name, threat_type} = this.props.speciesData
+        const { common_name, image, id, scientific_name } = this.props.speciesData
         return (
           <MDBCol>
             <MDBCard style={box}>
@@ -50,7 +55,8 @@ export default class Species extends Component {
                     </MDBCardText>                    
                     <SaveButton
                     isFollowing={followingObj ? true : false} 
-                    followingObj={followingObj} id={id}
+                    followingObj={followingObj} 
+                    id={id}
                     onFollow={this.props.onFollow}
                     onUnfollow={this.props.onUnfollow}
                     />

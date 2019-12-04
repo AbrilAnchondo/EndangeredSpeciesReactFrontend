@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import SpeciesList from './SpeciesList';
 import FilterThreatType from './FilterThreatType';
 import FilterByGroup from './FilterByGroup';
-import Organizations from '../Organizations';
 import { Link } from 'react-router-dom';
 import Title from './Title';
 

@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { Route } from 'react-router-dom';
 
  
-
 export default class SaveButton extends Component {
 
     // state = {
@@ -46,6 +43,7 @@ export default class SaveButton extends Component {
     
 
     render() {
+        console.log(this.props.isFollowing)
         return (
             <>
                 {this.props.isFollowing &&
