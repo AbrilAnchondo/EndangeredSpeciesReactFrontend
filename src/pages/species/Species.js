@@ -30,7 +30,7 @@ export default class Species extends Component {
     //gets an array of followingObj for that species
     getUserFollowing () {
         const followings = this.props.speciesData.followings;
-        console.log(followings)
+        //console.log(followings)
         for (let i=0; i < followings.length; i++){
           if (followings[i].user_id == localStorage.id) {
               return followings[i];

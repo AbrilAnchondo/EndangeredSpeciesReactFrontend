@@ -49,7 +49,7 @@ export class App extends Component {
     localStorage.id=userInfo.user_id
   }
 
-  render() {
+  render() { 
    return (
      <Switch>
        <div>
