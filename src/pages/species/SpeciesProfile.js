@@ -72,7 +72,7 @@ export default class SpeciesProfile extends Component {
     render() {
 
         if (this.state.speciesDetails === null) { return <div></div>; }
-        const {id, common_name, scientific_name, threat_type, image, population, habitat, conservation_measure, use_trade} = this.state.speciesDetails;
+        const { id, common_name, scientific_name, threat_type, image, population, habitat, conservation_measure, use_trade} = this.state.speciesDetails;
 
         return (
             <div>

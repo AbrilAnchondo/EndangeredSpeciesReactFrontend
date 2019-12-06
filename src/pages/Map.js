@@ -7,7 +7,8 @@ import { GoogleMap, withScriptjs, withGoogleMap, Marker, InfoWindow } from "reac
 
 
 function MyMap () {
-    
+    //using the usetate hook to keet track of the selected sanctuary
+    //initially set to null because we haven't clicked anything
     const [selectedSanctuary, setSelectedSanctuary] = useState(null);
     return (
         <GoogleMap
@@ -16,6 +17,7 @@ function MyMap () {
         >
             {sanctuariesData.map(sanctuary => (
                 <Marker 
+                    key={sanctuary.name}
                     position={{lat: sanctuary.lat, lng: sanctuary.lng}}
                     onClick ={() => {
                         setSelectedSanctuary(sanctuary);
@@ -40,17 +42,20 @@ function MyMap () {
     );
 }
 
+//withScriptjs embed google script on the page
+//withGoogleMap to pass the map that will render on the screen
 const WrappedMap = withScriptjs(withGoogleMap(MyMap));
 
 
 
 export default function Map() {
-  
+    //console.log(sanctuariesData);
+
     return (
         <div style={{width: "100vw", height: "100vh"}}>
             <Link to="/species"><h4 style={{textAlign: "right"}}>back</h4></Link>
              <WrappedMap
-                googleMapURL={"https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key="+process.env.REACT_APP_GOOGLE_API_KEY}
+                googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_GOOGLE_API_KEY}`}
                 loadingElement={<div style={{ height: "100%" }} />}
                 containerElement={<div style={{ height: "100%" }} />}
                 mapElement={<div style={{ height: "100%" }} />}
@@ -64,4 +69,3 @@ export default function Map() {
 
 
 
-// AIzaSyA-DXLbBsOG9SFahYLUTlgBCFfcLcm14vA

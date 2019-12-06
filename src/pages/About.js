@@ -63,7 +63,7 @@ export default function About() {
             <div className="flip-card-container">
                 <div className="flip-card">
                 <div className="flip-card-front">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXc6kcy6cHMV8v2EeMykaWPGEoU6YKtMQLEmirL4EIFH0OpPMP"/>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXc6kcy6cHMV8v2EeMykaWPGEoU6YKtMQLEmirL4EIFH0OpPMP" alt=""/>
                 </div>
                 <div className="flip-card-back">
                    <p>Scientists calculate 5.25 trillion pieces of plastic floating on the sea surface. It all adds up to 269,000 tons. Birds and sea animals are getting caught in plastic rings and nets. Fish are swallowing small pieces. Plastics are full of poisons.</p>

@@ -26,7 +26,3 @@ export default function AddComment(props) {
     )
 }
 
-{/* <textarea type="text"  
-    value={props.newComment}
-    onChange={props.handleChange}
-    /> */}

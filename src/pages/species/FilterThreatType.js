@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 
 const container = {
     textAlign: "center",
-   
-
-
 }
 
 
