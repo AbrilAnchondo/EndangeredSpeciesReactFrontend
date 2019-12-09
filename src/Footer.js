@@ -8,7 +8,8 @@ const fixed = {
   bottom: 0,
   width: '100%',
   height: '15%',
-  fontStyle: 'bold'
+  fontStyle: 'bold',
+  fontSize: '1em'
 }
 
 const Footer = () => {
