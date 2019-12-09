@@ -26,7 +26,6 @@ export default class OtherUsers extends Component {
     }
 
     render() {
-        console.log(this.state.speciesFollowings)
         return (
             <div className="users-container">
                 <h4 className="users">Other users are also interested in this species!</h4>

@@ -3,11 +3,6 @@ import React, { Component } from 'react';
  
 export default class SaveButton extends Component {
 
-    // state = {
-    //     isFollowed: false
-    // }
-   
-
     followSpecies = () => {
         fetch("http://localhost:3000/followings", {
             method: "POST",

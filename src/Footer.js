@@ -1,11 +1,13 @@
 import React from "react";
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
+import QuoteGenerator from "./QuoteGenerator";
 
 const fixed = {
   position: 'fixed',
   left: 0,
   bottom: 0,
   width: '100%',
+  height: '15%',
   fontStyle: 'bold'
 }
 
@@ -15,8 +17,7 @@ const Footer = () => {
       <MDBContainer fluid className="text-center text-md-left">
         <MDBRow>
           <MDBCol md="6" style={{textAlign: "center", marginLeft: "25%"}}>
-            <h5 className="quote">"What you do makes a difference, and you have to decide what kind of difference you want to make."</h5>
-            <p>- Jane Goodall</p>
+            <QuoteGenerator />
           </MDBCol>
           <MDBCol md="6">
 
