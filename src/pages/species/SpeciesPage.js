@@ -6,7 +6,7 @@ import SpeciesProfile from './SpeciesProfile';
 
 export default function SpeciesPage(props) {
     return (
-        <div>
+        <div className="bg-species">
             <Route exact path={props.match.url} render={(routerProps) => (
                 <SpeciesBrowser  {...routerProps}/>)}/>
             <Route path={`${props.match.url}/:id`} render={routerProps => 

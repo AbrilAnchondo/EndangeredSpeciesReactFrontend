@@ -26,7 +26,7 @@ export default class Organizations extends Component {
 
     render() {
         return (
-           <div className="orgContainer" >
+           <div className="orgContainer bg-species" >
                <Link to="/species"><h4 style={{textAlign: "right"}}>back</h4></Link>
                <h1 style={{textAlign: "center", padding: "50px"}}>This is a list of link to some importatn Wildlife Organizations</h1>
                 {this.state.organizations.map(organization => <div className="orgList"><a href={organization.url}>{organization.name}</a></div>)}

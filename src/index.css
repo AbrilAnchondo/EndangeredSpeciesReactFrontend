@@ -35,6 +35,10 @@ body, html {
   background-size: cover;
   }
 
+  .bg-species {
+    background-image: linear-gradient(#F8F8FF, #DCDCDC, #F8F8FF)
+  }
+
   .quote {
     text-align: center;
     font-weight: bold;

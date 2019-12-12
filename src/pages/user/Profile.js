@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SpeciesList from '../species/SpeciesList';
+import  {Link} from 'react-router-dom'
 
 
 
@@ -54,10 +55,11 @@ export default class Profile extends Component {
     }
 
     render() {
+
         return (
-           <div style={container}>
+           <div style={container} className="bg-species">
                <div>
-                    <h1 style={title}>Hi {this.props.username},</h1>
+                    <h1 style={title}>Hi {capitalizedName},</h1>
                 </div>
                 <div>
                     <h3 style={add}><a href="/species">Add to your collection...</a></h3>
