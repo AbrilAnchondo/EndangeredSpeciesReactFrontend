@@ -55,7 +55,9 @@ export default class Profile extends Component {
     }
 
     render() {
-
+        let name = this.props.username;
+        let capitalizedName = name.charAt(0).toUpperCase() + name.slice(1);
+        
         return (
            <div style={container} className="bg-species">
                <div>
